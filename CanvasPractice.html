@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Canvas Shennanigans</title>
+
+</head>
+<body>
+    <canvas id="canvasA"width="500px" height="500px"></canvas>
+    <canvas id="canvasB"></canvas>
+</body>
+
+<script id="scriptA">
+let c = document.getElementById("canvasA")
+let ctx = c.getContext("2d")
+
+// Task 1
+ctx.fillStyle = "red"
+ctx.fillRect(50, 50, 100, 100)
+
+// Task 2
+ctx.fillStyle = "blue"
+ctx.beginPath()
+ctx.arc(100, 200, 50, 0, 2 * Math.PI)
+ctx.fill()
+
+// Task 3
+ctx.strokeStyle = "green"
+ctx.lineWidth = 10
+ctx.beginPath()
+ctx.moveTo(0, 0)
+ctx.lineTo(c.width, c.height)
+ctx.stroke()
+
+// Task 4
+ctx.save()
+ctx.translate(c.width/2, c.height/2)
+ctx.rotate(Math.PI/4)
+ctx.fillStyle = "orange"
+ctx.beginPath()
+ctx.arc(0, 0, 100, 0, 2 * Math.PI)
+ctx.fill()
+ctx.restore()
+
+// Task 5
+ctx.fillStyle = "yellow"
+ctx.fillRect(50, 50, 100, 100)
+
+ctx.translate(200, 0)
+ctx.fillStyle = "green"
+ctx.fillRect(50, 50, 100, 100)
+
+ctx.translate(0, 200)
+ctx.fillStyle = "purple"
+ctx.fillRect(50, 50, 100, 100)
+
+// Task 6
+ctx.fillStyle = "red"
+ctx.fillRect(100, 100, 100, 100)
+
+ctx.save()
+ctx.translate(150, 150)
+ctx.rotate(-45 * Math.PI/180)
+ctx.fillStyle = "blue"
+ctx.fillRect(-50, -50, 100, 100)
+ctx.restore()
+</script>
+
+<script id="ScriptB">
+
+let ca = document.getElementById("canvasB")
+let ctxa = ca.getContext("2d")
+
+ctxa.fillstyle = "red"
+ctxa.fillrect(50,50,100,100)
+</script>
+
+</html>
